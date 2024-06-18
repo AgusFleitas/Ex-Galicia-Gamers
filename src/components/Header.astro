@@ -1,18 +1,83 @@
-<header id='header-nav' class='fixed w-screen flex justify-center py-6 z-10'>
+<header
+  id='header-nav'
+  class='fixed w-full lg:w-screen flex justify-end lg:justify-center py-6 z-10'
+>
+  <button id="open-button" class='mr-8 md:hidden'>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      stroke-width='2'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+      class='icon icon-tabler icons-tabler-outline icon-tabler-menu-2'
+      ><path stroke='none' d='M0 0h24v24H0z' fill='none'></path><path
+        d='M4 6l16 0'></path><path d='M4 12l16 0'></path><path d='M4 18l16 0'
+      ></path></svg
+    >
+  </button>
   <nav>
-    <ul class='flex mx-auto gap-48 uppercase font-medium text-white/75'>
-      <li class='hover:text-white hover:scale-125 transition-all cursor-pointer'>
+    <ul
+      id="navbar"
+      class='mx-auto hidden md:flex md:gap-24 lg:gap-48 uppercase font-medium text-white/75'
+    >
+      <li
+        class='hover:text-white hover:scale-125 transition-all cursor-pointer'
+      >
         <a href='#proceso'> Proceso </a>
       </li>
-      <li class='hover:text-white hover:scale-125 transition-all cursor-pointer'>
+      <li
+        class='hover:text-white hover:scale-125 transition-all cursor-pointer'
+      >
         <a href='#galeria'> Galería </a>
       </li>
-      <li class='hover:text-white hover:scale-125 transition-all cursor-pointer'>
+      <li
+        class='hover:text-white hover:scale-125 transition-all cursor-pointer'
+      >
         <a href='#opiniones'> Opiniones </a>
       </li>
-      <li class='hover:text-white hover:scale-125 transition-all cursor-pointer'>
+      <li
+        class='hover:text-white hover:scale-125 transition-all cursor-pointer'
+      >
         <a href='#contacto'> Contacto </a>
       </li>
     </ul>
   </nav>
 </header>
+
+<style>
+  @media (max-width: 480px) {
+    ul {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      min-height: 100vh;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      margin: 0;
+      background-color: rgb(23 37 84 / 0.8);
+      padding: 64px 64px 0 24px;
+    }
+
+    nav .visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+</style>
+
+<script>
+  const nav = document.querySelector("#navbar");
+  const open = document.querySelector("#open-button");
+
+  open.addEventListener("click", () => {
+  nav.classList.add("visible");
+});
+</script>
