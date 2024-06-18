@@ -1,0 +1,23 @@
+---
+import logoImage from "../../public/favicon.webp";
+import { Image } from "astro:assets";
+---
+
+<section class='flex flex-col md:flex-row gap-2'>
+  <div class='w-full md:w-1/2 flex flex-col justify-center'>
+    <h1 class='text-5xl md:text-6xl text-balance text-white font-extrabold mb-4'>
+      Organiza <strong class='text-violet-primary'>Torneos eSports</strong> de Clase
+      Mundial
+    </h1>
+    <p class="text-pretty">
+      En Galicia Gamers, transformamos tu pasión por los videojuegos en experiencias inolvidables.
+    </p>
+    <a
+      class='w-56 bg-violet-primary transition-all rounded-md inline-block py-2 px-4 mt-8 font-semibold hover:scale-110 hover:bg-[#d361a9] '
+      href='#'>¡Organicemos tu evento!</a
+    >
+  </div>
+  <div class='w-full mt-8 md:w-1/2 md:mt-0'>
+    <Image src={logoImage} alt='Logo de Galicia eSports' loading="eager" />
+  </div>
+</section>

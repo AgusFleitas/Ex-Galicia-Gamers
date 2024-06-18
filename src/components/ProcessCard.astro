@@ -1,0 +1,13 @@
+---
+const { icon, title, text } = Astro.props;
+---
+
+<article
+  class='bg-white/5 backdrop-blur border-2 border-violet-primary/60 rounded-md px-6 md:px-10 py-8 flex flex-col items-center justify-center between gap-4 md:h-[400px] transition-all duration-200 hover:scale-105 hover:bg-violet-primary/5'
+>
+  <img class='w-16' src={icon.src} loading="eager" alt='' />
+  <h4 class='font-bold text-xl text-violet-primary uppercase text-center'>
+    {title}
+  </h4>
+  <p>{text}</p>
+</article>

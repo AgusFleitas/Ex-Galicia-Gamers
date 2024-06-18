@@ -1,0 +1,52 @@
+---
+import ReviewCard from "./ReviewCard.astro"
+
+import firstPic from "../../public/ProfilePics/1.jpg"
+import secondPic from "../../public/ProfilePics/2.jpg"
+import thirdPic from "../../public/ProfilePics/7.jpg"
+import fourthPic from "../../public/ProfilePics/4.jpg"
+import fifthPic from "../../public/ProfilePics/5.jpg"
+import sixthPic from "../../public/ProfilePics/8.jpg"
+---
+
+<section id="opiniones">
+    <h2 class="text-3xl md:text-5xl text-center text-balance font-bold mb-6 md:mb-12">¿Qué dicen nuestros clientes sobre nosotros?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" >
+        <ReviewCard 
+        title="Totalmente recomendables"
+        profilePic={firstPic}
+        text="Galicia Gamers hizo posible nuestro primer gran torneo. Su atención al detalle y profesionalismo fueron excepcionales."
+        name="Carlos Martínez, de Vigo"
+        />
+        <ReviewCard 
+        title="Inolvidable"
+        profilePic={secondPic}
+        text="Gracias a ellos, nuestro evento fue un éxito total. Todo estuvo perfectamente coordinado y los jugadores quedaron encantados."
+        name="Lucio Fernandez, de Coruña"
+        />
+        <ReviewCard 
+        title="Organización impecable"
+        profilePic={thirdPic}
+        text="Desde el primer contacto hasta la finalización del torneo, Galicia Gamers demostró un nivel de profesionalismo increíble."
+        name="Elena Puentes, de Lugo"
+        />
+        <ReviewCard 
+        title="Torneo sin complicaciones"
+        profilePic={fourthPic}
+        text="Como alguien nuevo en la organización de eventos. Galicia Gamers se encargó de todo permitiéndome disfrutar del torneo sin estrés."
+        name="Pablo García, de Santiago de Compostela"
+        />
+        <ReviewCard 
+        title="Experiencia memorable"
+        profilePic={fifthPic}
+        text="Nuestro torneo anual de e-sports nunca había sido tan espectacular. Sin duda, c   ontaremos con ellos para futuros eventos."
+        name="Héctor Rodriguez, de Ourense"
+        />
+        <ReviewCard 
+        title="Soporte excepcional"
+        profilePic={sixthPic}
+        text="El equipo de Galicia Gamers estuvo disponible en todo momento. Su compromiso con la calidad y la satisfacción del cliente es inigualable."
+        name="Lucía Quintela, de A Coruña"
+        />
+    </div>
+</section>

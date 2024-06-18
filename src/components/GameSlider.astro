@@ -1,0 +1,131 @@
+---
+import COD from "../assets/GamesImages/CallOfDuty.png";
+import CSGO from "../assets/GamesImages/CSGO.png";
+import DOTA from "../assets/GamesImages/Dota2.png";
+import FIFA from "../assets/GamesImages/FIFA.png";
+import FORT from "../assets/GamesImages/Fortnite.png";
+import HALO from "../assets/GamesImages/Halo.png";
+import LOL from "../assets/GamesImages/LOL.png";
+import MORTAL from "../assets/GamesImages/MortalKombat.png";
+import OVER from "../assets/GamesImages/Overwatch.png";
+import PUBG from "../assets/GamesImages/PUBG.png";
+import TEK from "../assets/GamesImages/Tekken.png";
+import VALO from "../assets/GamesImages/Valorant.png";
+---
+
+<section>
+  <h3 class='text-3xl md:text-5xl text-center font-bold md:mb-4'>¡Escoge tu juego!</h3>
+  <h4 class='font-medium text-center text-lg md:text-2xl mb-12'>
+    Nosotros nos encargamos del resto.
+  </h4>
+  <div class='slider'>
+    <div class='slide-track'>
+      <div class='slide'>
+        <img src={COD.src} alt='Logo del juego Call of Duty' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={CSGO.src} alt='Logo del juego Counter Strike Global Offensive' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={DOTA.src} alt='Logo del juego Dota 2' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={FIFA.src} alt='Logo del juego FIFA' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={FORT.src} alt='Logo del juego Fortnite' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={HALO.src} alt='Logo del juego Halo' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={LOL.src} alt='Logo del juego League of Legends' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={MORTAL.src} alt='Logo del juego Mortal Kombat' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={OVER.src} alt='Logo del juego Overwatch' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={PUBG.src} alt='Logo del juego P.U.B.G' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={TEK.src} alt='Logo del juego Tekken' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={VALO.src} alt='Logo del juego Valorant' loading='lazy' />
+      </div>
+
+      <div class='slide'>
+        <img src={COD.src} alt='Logo del juego Call of Duty' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={CSGO.src} alt='Logo del juego Counter Strike Global Offensive' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={DOTA.src} alt='Logo del juego Dota 2' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={FIFA.src} alt='Logo del juego FIFA' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={FORT.src} alt='Logo del juego Fortnite' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={HALO.src} alt='Logo del juego Halo' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={LOL.src} alt='Logo del juego League of Legends' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={MORTAL.src} alt='Logo del juego Mortal Kombat' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={OVER.src} alt='Logo del juego Overwatch' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={PUBG.src} alt='Logo del juego P.U.B.G' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={TEK.src} alt='Logo del juego Tekken' loading='lazy' />
+      </div>
+      <div class='slide'>
+        <img src={VALO.src} alt='Logo del juego Valorant' loading='lazy' />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .slider {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .slider .slide-track {
+    display: flex;
+    gap: 48px;
+    animation: scroll 40s linear infinite;
+    width: calc(200px * 24);
+  }
+
+  .slider .slide {
+    width: 200px;
+  }
+
+  .slider .slide img {
+    width: 100%;
+    opacity: 0.7;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-200px * 12));
+    }
+  }
+</style>

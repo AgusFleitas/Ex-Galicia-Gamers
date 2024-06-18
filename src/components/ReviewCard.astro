@@ -1,0 +1,21 @@
+---
+const { title, profilePic, text, name } = Astro.props;
+---
+
+<article class='flex flex-col lg:flex-row border-2 gap-6 border-violet-primary rounded-md py-4 px-4'>
+  <div class='lg:w-1/2 flex justify-center items-center'>
+    <img
+      class='md:w-1/2 lg:w-full rounded-md md:rounded-full'
+      src={profilePic.src}
+      alt='Foto de perfil del usuario'
+      loading="lazy"
+    />
+  </div>
+  <div class='flex flex-col gap-1'>
+    <strong class="text-violet-primary/80 font-bold">{title}</strong>
+    <p class="text-pretty">
+      "{text}"
+    </p>
+    <span class="text-end italic font-thin">- {name}.</span>
+  </div>
+</article>
