@@ -1,8 +1,8 @@
 <header
   id='header-nav'
-  class='fixed w-full lg:w-screen flex justify-end lg:justify-center py-6 z-10'
+  class='fixed w-full lg:w-screen flex justify-end md:justify-center py-6 z-10'
 >
-  <button id="open-button" class='mr-8 md:hidden'>
+  <button id='open-button' class='mr-8 md:hidden'>
     <svg
       xmlns='http://www.w3.org/2000/svg'
       width='24'
@@ -19,9 +19,25 @@
       ></path></svg
     >
   </button>
+  <button id='close-button' class='mr-8 hidden'>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      stroke-width='2'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+      class='icon icon-tabler icons-tabler-outline icon-tabler-x'
+      ><path stroke='none' d='M0 0h24v24H0z' fill='none'></path><path
+        d='M18 6l-12 12'></path><path d='M6 6l12 12'></path></svg
+    >
+  </button>
   <nav>
     <ul
-      id="navbar"
+      id='navbar'
       class='mx-auto hidden md:flex md:gap-24 lg:gap-48 uppercase font-medium text-white/75'
     >
       <li
@@ -51,33 +67,48 @@
 <style>
   @media (max-width: 480px) {
     ul {
-      opacity: 0;
-      visibility: hidden;
-      position: absolute;
-      min-height: 100vh;
-      top: 0;
-      right: 0;
-      bottom: 0;
       display: flex;
       flex-direction: column;
-      justify-content: start;
-      margin: 0;
-      background-color: rgb(23 37 84 / 0.8);
-      padding: 64px 64px 0 24px;
+      align-items: center;
+      gap: 24px;
+      position: absolute;
+      right: -220px;
+      top: 64px;
+      padding: 32px 64px;
+      background-color: rgb(11 17 37 / 0.85);
+      border: 2px solid rgb(11, 17, 37);
+      border-radius: 16px;
+      transition: 250ms ease-in-out;
     }
 
-    nav .visible {
-      opacity: 1;
-      visibility: visible;
+    .visible {
+      transform: translateX(-232px);
     }
   }
 </style>
 
 <script>
   const nav = document.querySelector("#navbar");
-  const open = document.querySelector("#open-button");
+  const openButton = document.querySelector("#open-button") as HTMLElement;
+  const closeButton = document.querySelector("#close-button") as HTMLElement;
 
-  open.addEventListener("click", () => {
-  nav.classList.add("visible");
+  openButton.addEventListener("click", () => {
+    nav.classList.add("visible");
+    openButton.style.display = "none";
+    closeButton.style.display = "inline-block";
+  });
+
+  closeButton.addEventListener("click", () => {
+    closeButton.style.display = "none";
+    openButton.style.display = "inline-block";
+    nav.classList.remove("visible");
+  });
+
+let links = document.querySelectorAll("a");
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("visible");
+  });
 });
 </script>

@@ -21,7 +21,7 @@ import Footer from "../components/Footer.astro";
   <body>
     <div /> <!-- Contenedor de las estrellas -->
     <Header />
-    <div class='w-screen md:max-w-6xl px-10 pt-20 md:pt-60 md:mx-auto flex flex-col gap-16 lg:gap-32'>
+    <div class='w-screen md:max-w-6xl px-10 pt-20 overflow-hidden md:pt-60 md:mx-auto flex flex-col gap-16 lg:gap-32'>
       <slot />
     </div>
     <Footer />
@@ -31,6 +31,7 @@ import Footer from "../components/Footer.astro";
   html {
     font-family: "Manrope Variable", sans-serif;
     color-scheme: dark light;
+    color: #fff;
     scroll-behavior: smooth;
     /* background-color: #13151a; */
     background: linear-gradient(74deg, #19082b, #081a35);
