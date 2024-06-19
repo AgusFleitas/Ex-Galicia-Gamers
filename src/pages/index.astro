@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro"
 import HowWeWork from "../components/HowWeWork.astro"
 import Objections from "../components/Objections.astro"
-import Carrousel from "../components/Carrousel.astro";
+import Carrousel from "../components/Carrousel.jsx";
 import GameSlider from "../components/GameSlider.astro";
 import Reviews from "../components/Reviews.astro"
 import Contact from "../components/Contact.jsx"
@@ -14,8 +14,8 @@ import Contact from "../components/Contact.jsx"
   <Hero />
   <HowWeWork />
   <Objections />
-  <Carrousel />
+  <Carrousel client:visible />
   <GameSlider />
   <Reviews />
-  <Contact client:visible />
+  <Contact client:load />
 </Layout>
