@@ -92,25 +92,32 @@
   const openButton = document.querySelector("#open-button") as HTMLElement;
   const closeButton = document.querySelector("#close-button") as HTMLElement;
 
-  openButton.addEventListener("click", () => {
-    nav.classList.add("visible");
-    openButton.style.display = "none";
-    closeButton.style.display = "inline-block";
-  });
+  let links = document.querySelectorAll("a");
 
-  closeButton.addEventListener("click", () => {
-    closeButton.style.display = "none";
-    openButton.style.display = "inline-block";
-    nav.classList.remove("visible");
-  });
+// Compruebo que el ancho de la pantalla sea menor a 768px (De lo contrario, el botón se muestra incluso en pantallas Desktop).
+  if (window.innerWidth < 768) {
+    
+    // Al abrir la NavBar.
+    openButton.addEventListener("click", () => {
+      nav.classList.add("visible");
+      openButton.style.display = "none";
+      closeButton.style.display = "inline-block";
+    });
 
-let links = document.querySelectorAll("a");
+    // Al cerrar la NavBar.
+    closeButton.addEventListener("click", () => {
+      closeButton.style.display = "none";
+      openButton.style.display = "inline-block";
+      nav.classList.remove("visible");
+    });
 
-links.forEach((link) => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("visible");
-    closeButton.style.display = "none";
-    openButton.style.display = "inline-block";
-  });
-});
+    // Cerrar la NavBar y mostrar nuevamente el ícono para abrirla al momento de tocar un link.
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("visible");
+        closeButton.style.display = "none";
+        openButton.style.display = "inline-block";
+      });
+    });
+  }
 </script>
