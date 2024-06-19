@@ -109,6 +109,8 @@ let links = document.querySelectorAll("a");
 links.forEach((link) => {
   link.addEventListener("click", () => {
     nav.classList.remove("visible");
+    closeButton.style.display = "none";
+    openButton.style.display = "inline-block";
   });
 });
 </script>
