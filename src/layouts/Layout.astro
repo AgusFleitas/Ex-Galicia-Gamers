@@ -7,6 +7,8 @@ const { title } = Astro.props;
 import "@fontsource-variable/manrope";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 ---
 
 <!doctype html>
@@ -25,6 +27,7 @@ import Footer from "../components/Footer.astro";
       <slot />
     </div>
     <Footer />
+    <SpeedInsights />
   </body>
 </html>
 <style is:global>
