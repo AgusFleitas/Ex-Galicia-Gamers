@@ -1,10 +1,12 @@
 ---
 //Imports.
-import Tournament1 from "../../public/Images/Tournament1.webp";
-import Tournament2 from "../../public/Images/Tournament2.webp";
-import Tournament3 from "../../public/Images/Tournament3.webp";
-import Tournament4 from "../../public/Images/Tournament4.webp";
-import Tournament5 from "../../public/Images/Tournament5.webp";
+import Tournament1 from "../assets/Tournament1.webp";
+import Tournament2 from "../assets/Tournament2.webp";
+import Tournament3 from "../assets/Tournament3.webp";
+import Tournament4 from "../assets/Tournament4.webp";
+import Tournament5 from "../assets/Tournament5.webp";
+
+import { Image } from "astro:assets";
 ---
 
 <section id='galeria' class='flex flex-col items-center justify-center'>
@@ -14,32 +16,32 @@ import Tournament5 from "../../public/Images/Tournament5.webp";
   <div class='carrousel-container'>
     <div class='carrousel' id='slider'>
       <div class='image-container'>
-        <img
-          src={Tournament1.src}
+        <Image
+          src={Tournament1}
           alt='Equipo de esports en la estación de juego'
         />
       </div>
       <div class='image-container'>
-        <img
-          src={Tournament2.src}
+        <Image
+          src={Tournament2}
           alt='Estaciones de juego que muestra los componentes y perifericos del setup'
         />
       </div>
       <div class='image-container'>
-        <img
-          src={Tournament3.src}
+        <Image
+          src={Tournament3}
           alt='Participantes divirtiéndose en el torneo de esports'
         />
       </div>
       <div class='image-container'>
-        <img
-          src={Tournament4.src}
+        <Image
+          src={Tournament4}
           alt='Equipo de esports celebrando una victoria'
         />
       </div>
       <div class='image-container'>
-        <img
-          src={Tournament5.src}
+        <Image
+          src={Tournament5}
           alt='Una participante del torneo disfrutando la estación de juego'
         />
       </div>
