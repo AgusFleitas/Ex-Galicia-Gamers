@@ -65,7 +65,7 @@
 </header>
 
 <style>
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     ul {
       display: flex;
       flex-direction: column;
@@ -88,36 +88,49 @@
 </style>
 
 <script>
-  const nav = document.querySelector("#navbar");
   const openButton = document.querySelector("#open-button") as HTMLElement;
   const closeButton = document.querySelector("#close-button") as HTMLElement;
+  const nav = document.querySelector("#navbar") as HTMLElement;
+  const links = nav.querySelectorAll("a");
 
-  let links = document.querySelectorAll("a");
-
-// Compruebo que el ancho de la pantalla sea menor a 768px (De lo contrario, el botón se muestra incluso en pantallas Desktop).
-  if (window.innerWidth < 768) {
-    
-    // Al abrir la NavBar.
-    openButton.addEventListener("click", () => {
-      nav.classList.add("visible");
-      openButton.style.display = "none";
-      closeButton.style.display = "inline-block";
-    });
-
-    // Al cerrar la NavBar.
-    closeButton.addEventListener("click", () => {
-      closeButton.style.display = "none";
+  // Función para el manejo de la NavBar
+  function handleNavBar() {
+    if (window.innerWidth < 768) {
+      // Si el ancho es menor a 768 muestro el menú hamburguesa.
       openButton.style.display = "inline-block";
-      nav.classList.remove("visible");
-    });
+      closeButton.style.display = "none";
 
-    // Cerrar la NavBar y mostrar nuevamente el ícono para abrirla al momento de tocar un link.
-    links.forEach((link) => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("visible");
-        closeButton.style.display = "none";
-        openButton.style.display = "inline-block";
-      });
-    });
+      // Eventos onClick para cada botón y los enlaces.
+      openButton.addEventListener("click", openNavBar);
+      closeButton.addEventListener("click", closeNavBar);
+      links.forEach((link) => link.addEventListener("click", closeNavBar));
+    } else {
+      // Si el ancho es mayor a 768 no muestro los botones.
+      openButton.style.display = "none";
+      closeButton.style.display = "none";
+
+      // Elimino los eventos onClick para que no se renderice el menú hamburguesa.
+      openButton.removeEventListener("click", openNavBar);
+      closeButton.removeEventListener("click", closeNavBar);
+      links.forEach((link) => link.removeEventListener("click", closeNavBar));
+    }
   }
+
+  function openNavBar() {
+    nav.classList.add("visible");
+    openButton.style.display = "none";
+    closeButton.style.display = "inline-block";
+  }
+
+  function closeNavBar() {
+    nav.classList.remove("visible");
+    closeButton.style.display = "none";
+    openButton.style.display = "inline-block";
+  }
+
+  // Ejecuto la función al cargar la página
+  handleNavBar();
+
+  // Si se detecta un 'resize' vuelvo a ejecutar la función handleNavBar.
+  window.addEventListener("resize", handleNavBar);
 </script>
